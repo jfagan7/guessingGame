@@ -1,33 +1,44 @@
+/*
+ * NAME: GuessingGame
+ * AUTHOR: Justin Fagan
+ * DATE: 9/26/17 
+ */
+
 import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.lang.Math;
 
 public class GuessingGame{
 	public static void main(String[]args)
 	{
-		/*
-		Scanner input= new Scanner(System.in);
-		System.out.println("What is your name?");
-		String s = input.next();
-		System.out.println("Nice to meet you " + s);
-		*/
-	}	
-	public static void guessingGame(boolean isNumber, int guess)
-	{
+		boolean isNumber=false;
+		int guess = 0;
 		int answer = (int) (Math.random()*10 + 1);
+		Scanner input = new Scanner(System.in);
+		int x = 0;
+		String g= "guess";
 		while(guess != answer)
 		{
+			isNumber=false;
 			while(!isNumber)
 			{
 				try
 				{
 					System.out.println("Guess a number between 1 and 10");
-					if(guess==answer) 
+					guess = input.nextInt();
+					isNumber=true;
+					if(x>1)
 					{
-						isNumber=true;
+						g="guesses";
+					}
+					if(guess != answer)
+					{
+						System.out.println("That was incorrect!");
+						x++;
 					}
 					else
 					{
-						System.out.println("You guessed wrong try again");
+						System.out.println("Congratulations you found the answer after " + x + " guesses!");
 					}
 				}
 				catch(InputMismatchException e)
@@ -36,5 +47,6 @@ public class GuessingGame{
 				}
 			}
 		}
-	}
+		
+	}	
 }
