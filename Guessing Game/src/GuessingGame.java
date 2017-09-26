@@ -38,7 +38,7 @@ public class GuessingGame{
 					}
 					else
 					{
-						System.out.println("Congratulations you found the answer after " + x + " guesses!");
+						System.out.println("Congratulations you found the answer after " + x + g);
 					}
 				}
 				catch(InputMismatchException e)
