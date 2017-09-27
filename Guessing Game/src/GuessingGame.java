@@ -1,7 +1,7 @@
 /*
  * NAME: Guessing Game
  * AUTHOR: Justin Fagan
- * DATE: 9/26
+ * DATE: 9/26 
  */
 
 import java.util.Scanner;
@@ -15,7 +15,9 @@ public class GuessingGame{
 		int guess = 0;
 		int answer = (int) (Math.random()*10 + 1);
 		Scanner input = new Scanner(System.in);
-		int x = 0;
+		//int x = 0;
+		int x = 1;
+		//I changed x to 1 as the first guess made still counts as a guess.
 		String g= " guess!";
 		while(guess != answer)
 		{
